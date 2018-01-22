@@ -1,5 +1,0 @@
-purple back: #6451d5
-font: #ffffff
-btn: #382d78
-font-comment: #bcb3f2
-table-back: #efefef

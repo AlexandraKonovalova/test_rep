@@ -1,5 +1,0 @@
-a = int (input())
-pr = int (input())
-years = int (input())
-s = a*((1+(pr/100))**(years))
-print (s)
