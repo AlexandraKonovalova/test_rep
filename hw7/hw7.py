@@ -25,20 +25,25 @@ def search(text):
     return d
 
 def freq(d):
-    values = list(d.values())
-    print('Минимальную частотность имеют существительные: ')
-    for key in sorted(d, key=d.get):
-        if d[key] == min(values):
-            print(key)
+    if d:
+        values = list(d.values())
+        print('Минимальную частотность имеют существительные: ')
+        for key in sorted(d, key=d.get):
+            if d[key] == min(values):
+                print(key)
 
 def length(d):
     keys = list(d.keys())
-    print('Существительных с суффиксом -hood: ' + str(len(keys)))
+    if len(keys) > 0:
+        print('Существительных с суффиксом -hood: ' + str(len(keys)))
+    else:
+        print('В тексте нет существительных с суффиксом -hood.')
 
 def deriv(d):
-    print('Существительные отбразованы от слов: ')
-    for key in sorted(d, key = d.get, reverse = True):
-        print(key[:-4])
+    if d:
+        print('Существительные образованы от слов: ')
+        for key in sorted(d, key = d.get, reverse = True):
+            print(key[:-4])
 
 def main(fun):
     return length(fun), freq(fun), deriv(fun), 
