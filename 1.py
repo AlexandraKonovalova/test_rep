@@ -1,36 +1,28 @@
-s = "I love linguistics!"
-#print(s[2])
-##i = 2
-##print(s[i])
+##text2 = re.sub('([^оа])(р|л)(о|а)', '\1\3\2\3', text1)
+import re
 
-i = 0
+SYMBS = "1234567890,—[]!­\"'«»?.,;:|/+*{}<>@#$%^& )("
 
-s1 = ""
+def no_tags(filename):
+    with open(filename, 'r', encoding='utf-8') as f:
+        text = f.read()
+        plain_text = re.sub('<.+?>', '', text)
+        plain_text = re.sub('&.+?;', '', plain_text)
+        with open('goodtext.txt', 'w', encoding='utf-8') as t:
+            t.write(plain_text)
 
-##if "ov" in s:
-##    print('ov')
-##elif "o" in s:
-##    print('o')
-##for c in s:
-##    if c == "o":
-##        continue
-##    print(c)
-##    i += 1
-##    if c == "i":
-##        break
-##    s1 += c
-####    print(s)
-##print(s1)
+def dict(no_tags):
+    d = {}
+    with open('goodtext.txt', 'r', encoding='utf-8') as f:
+        words = f.read().lower().split()
+        for word in words:
+            word = re.sub('[A-Z],—[]!­\"\'«»?.,;:|/+*{}<>@#$%^& )([a-z][0-9]', '', word):
+                
+        with open('goodtext.txt', 'w', encoding='utf-8') as t:
+            t.write(words)
 
-##l = len(s)
-##i = 0
-##
-##while i < l:
-##    print(s[i])
-##    i += 1
+def main():
+    return no_tags('war.html')
 
-##for i,c in enumerate(s):
-##    if i == 5:
-##        print(c)
-for i in range(len(s)):
-    print(s[i])
+if __name__ == "__main__":        
+    print(main())
