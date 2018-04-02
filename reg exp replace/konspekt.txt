@@ -1,0 +1,12 @@
+<.+?> - найти  то, что в тегах
+1)re.search(redexp, string)
+none/object
+2)r.group(1) -> str
+3)re.findall(regexp, string) -> array
+re.sub(regexp, toshing, string)
+
+html = '<html><body>...</html>'
+
+plaintext = re.sub('<.+?>', '', html)
+
+text2 = re.sub('(
