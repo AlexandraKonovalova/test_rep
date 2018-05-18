@@ -15,17 +15,19 @@ def ext():
 
 def freq(d):
     counter = collections.Counter(d)
+    counter = collections.Counter(counter).most_common(1)
     return counter
 
-#Находим самое частотное
+###Находим самое частотное - это какой-то сложный вариант, я нашла .most_common()
+## 
+##def first(d):
+##    main = sorted(d, key=d.get, reverse=True)
+##    return 'Чаще всего встречаются: ' + '\"' + main[0] + \
+##           '\":' + '\t' + str(d[main[0]])
 
-def first(d):
-    main = sorted(d, key=d.get, reverse=True)
-    return 'Чаще всего встречаются: ' + '\"' + main[0] + \
-           '\":' + '\t' + str(d[main[0]])
 
 def main():
-    return first(freq(ext()))
-
+    print('Расширение и его частотность: ', freq(ext()))
+    
 if __name__ == "__main__":
-    print(main())
+    main()
