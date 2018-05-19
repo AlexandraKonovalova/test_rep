@@ -15,7 +15,7 @@ def ext():
 
 def freq(d):
     counter = collections.Counter(d)
-    counter = collections.Counter(counter).most_common(1)
+    counter = collections.Counter(counter).most_common(1)[0][0]
     return counter
 
 ###Находим самое частотное - это какой-то сложный вариант, я нашла .most_common()
@@ -27,7 +27,8 @@ def freq(d):
 
 
 def main():
-    print('Расширение и его частотность: ', freq(ext()))
+    print('Самое частое разрешение: ', freq(ext()))
+
     
 if __name__ == "__main__":
     main()
