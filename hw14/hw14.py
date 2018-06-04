@@ -10,7 +10,7 @@ def read(filename):
 
 def sent(text):
     pattern = re.compile(r'[.|!|?|...|…|\n]') 
-    sent = {i.lower().strip(): i.lower().split() for i in pattern.split(text) if i}
+    sent = {i.strip(): i.split() for i in pattern.split(text) if i}
     return sent
 
 
